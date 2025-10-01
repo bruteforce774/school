@@ -19,14 +19,19 @@ export class MyApp extends BaseComponent {
             <files-and-folders></files-and-folders>
         <add-file-or-folder></add-file-or-folder>
         `;
+        
         const filesAndFolders = this.shadowRoot!.querySelector('files-and-folders') as FilesAndFolders;
         const currentFilesAndFolders = this.state.filesAndFolders.filter(f => f.parentId == this.state.currentId);
         filesAndFolders.set('items', currentFilesAndFolders);
+        
         const currentFileOrFolder = this.state.filesAndFolders.find(f => f.id == this.state.currentId);
         if (currentFileOrFolder) {
             const folderId = currentFileOrFolder!.parentId ?? -1;
             filesAndFolders.set('parent-folder', folderId);
         }
+
+        const currentFile = this.state.filesAndFolders.find(f => f.id == this.state.currentId);
+        filesAndFolders.set('current-file', currentFile || null);
 
         filesAndFolders.addEventListener('selected', this.handleSelected.bind(this));
 
