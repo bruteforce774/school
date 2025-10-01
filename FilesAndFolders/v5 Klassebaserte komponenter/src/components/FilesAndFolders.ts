@@ -25,6 +25,18 @@ export class FilesAndFolders extends BaseComponent {
                     <span>🗎</span> <a href="" data-id="${f.id}">${f.name}</a><br/>
                 `).join('')}
             </fieldset>
+
+            ${currentFile && currentFile.hasOwnProperty('content') ? /*HTML*/`}
+                <fieldset>
+                    <legend>${currentFile.name}</legend>
+                    <button id="toggle-content">
+                        ${this.state.showContent ? 'Skjul innhold' : 'Vis innhold'}
+                    </button>
+                    ${this.state.showContent ? /*HTML*/`
+                        <pre>${currentFile.content}</pre>
+                    ` : ''}
+                </fieldset>
+            ` : ''}
         `;
         this.shadowRoot!.addEventListener('click', this.handleClick.bind(this));
     }
