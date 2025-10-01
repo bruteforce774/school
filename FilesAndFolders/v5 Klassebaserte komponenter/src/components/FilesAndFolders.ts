@@ -5,7 +5,7 @@ export class FilesAndFolders extends BaseComponent {
     static props = ['items', 'parent-folder', 'current-file'];
 
     private state = {
-        showContent: false
+        showContent: true
     }
 
     render() {
