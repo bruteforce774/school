@@ -26,7 +26,7 @@ export class FilesAndFolders extends BaseComponent {
                 `).join('')}
             </fieldset>
 
-            ${currentFile && currentFile.hasOwnProperty('content') ? /*HTML*/`}
+            ${currentFile && currentFile.hasOwnProperty('content') ? /*HTML*/`
                 <fieldset>
                     <legend>${currentFile.name}</legend>
                     <button id="toggle-content">
