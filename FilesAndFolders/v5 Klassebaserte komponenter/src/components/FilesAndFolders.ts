@@ -11,6 +11,7 @@ export class FilesAndFolders extends BaseComponent {
     render() {
         const filesAndFolders = this.get('items') as FileOrFolder[] || [];
         const parentFolder = this.get('parent-folder') as number || false;
+        const currentFile = this.get('current-file') as FileOrFolder | null;
 
         this.shadowRoot!.innerHTML = /*HTML*/`
             <fieldset>
