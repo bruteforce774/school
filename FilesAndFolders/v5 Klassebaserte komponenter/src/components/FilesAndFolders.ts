@@ -3,6 +3,11 @@ import type { FileOrFolder } from "../types";
 
 export class FilesAndFolders extends BaseComponent {
     static props = ['items', 'parent-folder'];
+
+    private state = {
+        showContent: false
+    }
+
     render() {
         const filesAndFolders = this.get('items') as FileOrFolder[] || [];
         const parentFolder = this.get('parent-folder') as number || false;
