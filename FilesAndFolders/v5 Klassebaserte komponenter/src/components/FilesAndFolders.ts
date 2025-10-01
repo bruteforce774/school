@@ -38,6 +38,16 @@ export class FilesAndFolders extends BaseComponent {
                 </fieldset>
             ` : ''}
         `;
+
+        const toggleBtn = this.shadowRoot!.querySelector('#toggle-content');
+        
+        if(toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                this.state.showContent = !this.state.showContent;
+                this.render();
+            });
+        }
+
         this.shadowRoot!.addEventListener('click', this.handleClick.bind(this));
     }
 
