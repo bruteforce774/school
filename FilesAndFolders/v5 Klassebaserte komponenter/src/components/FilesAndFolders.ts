@@ -2,7 +2,7 @@ import { BaseComponent } from "../components/BaseComponent";
 import type { FileOrFolder } from "../types";
 
 export class FilesAndFolders extends BaseComponent {
-    static props = ['items', 'parent-folder'];
+    static props = ['items', 'parent-folder', 'current-file'];
 
     private state = {
         showContent: false
